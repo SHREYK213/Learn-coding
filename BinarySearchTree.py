@@ -17,6 +17,24 @@ def inorder(root):
 
         inorder(root.right)
 
+def preorder(root):
+    if root is not None:
+        print(str(root.key) + "->", end=' ')
+
+        preorder(root.left)
+
+        preorder(root.right)
+
+def postorder(root):
+
+    if root is not None:
+
+        postorder(root.left)
+
+        postorder(root.right)
+
+        print(str(root.key) + "->", end=' ')
+
 
 
 def insert(node, key):
@@ -97,3 +115,9 @@ print("\nDelete 10")
 root = deleteNode(root, 10)
 print("Inorder traversal: ", end=' ')
 inorder(root)
+
+print("Preorder traversal: ", end=' ')
+preorder(root)
+
+print("postorder traversal: ", end=' ')
+postorder(root)
